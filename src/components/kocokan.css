@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.kocokan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 75px;
+    position: relative;
+}
+
+.image {
+    width: 320px;
+    height: 320px;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bolder;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.header {
+    transform: rotate(-20deg);
+    font-size: 20px;
+    z-index: 3;
+    background-color: greenyellow;
+}
+
+.animasi {
+    animation: kocokan 0.4s linear 0s 10 alternate none running, kocokan2 0.5s linear 10 alternate none running;
+}
+
+.animasi-keluar {
+    animation-name: keluar;
+    animation-timing-function: linear;
+    animation-duration: 0.4s;
+    animation-iteration-count: 10;
+    animation-direction: alternate;
+    margin-top: 20px;
+    font-size: 20px;
+    z-index: 3;
+    background-color: lightskyblue;
+}
+
+@keyframes keluar {
+    from {
+        transform: scale(1, 1)
+    }
+    to {
+        transform: scale(3, 3)
+    }
+}
+
+@keyframes kocokan {
+    0% {
+        bottom: 0;
+    }
+    100% {
+        bottom: 250px;
+    }
+}
+
+@keyframes kocokan2 {
+    0% {
+        transform: rotate(40deg);
+    }
+    20% {
+        transform: rotate(-40deg);
+    }
+    40% {
+        transform: rotate(40deg);
+    }
+    60% {
+        transform: rotate(-40deg);
+    }
+    80% {
+        transform: rotate(40deg);
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
